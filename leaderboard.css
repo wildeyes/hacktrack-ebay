@@ -14,6 +14,7 @@ body {
 .outer {
   margin: 0 auto;
   max-width: 480px;
+  text-align: center;
 }
 
 .logo {
@@ -181,4 +182,18 @@ body {
   .player.selected:hover {
     background-color: #fefff4;
   }
+}
+
+.searchbox {
+  padding: 1em;
+  margin: 2em;
+}
+li.product {
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

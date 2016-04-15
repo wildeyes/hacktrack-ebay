@@ -15,17 +15,24 @@
 
 <template name="buygood">
 
-  <input type="text" class="searchbox" placeholder="search for ebay stuff..." />
+  <form class="controls">
+    <input type="text" class="searchbox" placeholder="search for ebay stuff..." />
 
+    <button class="searchit">Search It</button>
+  </form>
   {{#if products}}
-    <ol class="buygood">
+    <ol class="buygood" style="list-style: none;">
       {{#each products}}
-        {{> product}}
+        <li class="product">
+          <img src={{pictureURL}} alt="" />
+          <span class="name">{{adjustLength name}}</span>
+          <span class="price">{{price.amount}} {{price.currencyId}}</span>
+        </li>
       {{/each}}
     </ol>
-    {{else}}
-      <div class="subtitle">awaiting your search... :)</div>
-    {{/if}}
+  {{else}}
+    <div class="subtitle">awaiting your search... :)</div>
+  {{/if}}
 
 <!--   {{#if selectedName}}
     <div class="details">
@@ -36,11 +43,3 @@
     <div class="message">Click a product to select</div>
   {{/if}}
  --></template>
-
-<template name="product">
-  <li class="product">
-    <span class="name">{{name}}</span>
-    <span class="price">{{price}}</span>
-  </li>
-</template>
-

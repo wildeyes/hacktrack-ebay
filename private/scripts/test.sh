@@ -1,0 +1,1 @@
+curl "http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByKeywords&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=DanielKh-BuyGood-PRD-4e805b337-9ea4cc33&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&keywords=yoyo&paginationInput.entriesPerPage=1000"
