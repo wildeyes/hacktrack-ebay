@@ -21,12 +21,12 @@
     <button class="searchit">Search It</button>
   </form>
   {{#if products}}
-    <ol class="buygood" style="list-style: none;">
-      {{#each products}}
+    <ol class="buygood">
+      {{#each item in products}}
         <li class="product">
-          <img src={{pictureURL}} alt="" />
-          <span class="name">{{adjustLength name}}</span>
-          <span class="price">{{price.amount}} {{price.currencyId}}</span>
+          <img src={{item.galleryURL}} alt="" />
+          <span class="name">{{item.title}}</span>
+          <span class="price">{{price item}} - ${{currency item}}</span>
         </li>
       {{/each}}
     </ol>

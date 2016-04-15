@@ -188,6 +188,7 @@ body {
   padding: 1em;
   margin: 2em;
 }
+
 li.product {
     border: 1px solid lightgrey;
     border-radius: 15px;
@@ -196,4 +197,7 @@ li.product {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+ol {
+  margin: 0; padding: 0;list-style: none;
 }
