@@ -95,7 +95,7 @@ if (Meteor.isServer) {
     const data = APICall(reasonablePriceURL(keyword))
     const items = getItemsEbay(data)
 
-    return Item(items[0]).price * 0.25
+    return Item(items[0]).price * 0.85
   }
 
   function getLowestPriceItems(keyword) {

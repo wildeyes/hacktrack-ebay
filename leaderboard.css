@@ -265,3 +265,7 @@ body {
 img {
   width: 50%;
 }
+.buygood:after {
+  content: "";
+  display: block;
+}

@@ -11,13 +11,13 @@
     <img src="images/buygood.png" alt="" />
     <!-- <div class="subtitle">Select a scientist to give them points</div> -->
     {{> buygood}}
-  </div>
-  <footer class="footer"><p>BuyGood - 2016 - Hacktrack TLV
-  </p></footer>
+    <!-- <footer class="footer"><p>BuyGood - 2016 - Hacktrack TLV
+    </p></footer> -->
+  </div> 
 </body>
 
 <template name="buygood">
-
+<div class="buygood">
   <form class="controls">
     <input type="text" class="searchbox" placeholder="search for ebay stuff..." value="iphone" />
 
@@ -36,7 +36,7 @@
   {{else}}
   <div class="subtitle">awaiting your search... :)</div>
   {{/if}}
-
+</div>
 <!--   {{#if selectedName}}
     <div class="details">
       <div class="name">{{selectedName}}</div>
