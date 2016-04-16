@@ -16,6 +16,7 @@ if (Meteor.isClient) {
 
   Template.buygood.onCreated(function() {
     this.products = new ReactiveVar([])
+    this.isSearching = new ReactiveVar(false)
 
     // this.autorun(t => {
     //   if(t.firstRun)
@@ -29,16 +30,18 @@ if (Meteor.isClient) {
     products: _ => Template.instance().products.get(),
     adjustLength: str => str.slice(0,8) + '...',
     price:item => item.sellingStatus[0].currentPrice[0]['__value__'],
-    currency:item => item.sellingStatus[0].currentPrice[0]['@currencyId']
+    currency:item => item.sellingStatus[0].currentPrice[0]['@currencyId'],
+    isSearching: _ =>  Template.instance().isSearching.get()
   });
 
   Template.buygood.events({
     'click .searchit': function (e, self) {
       e.preventDefault()
+      self.isSearching.set(true); self.products.set([])
 
       const keyword = self.find('.searchbox').value
       Meteor.callPromise('products', keyword).then(products => {
-        self.products.set(products)
+        self.isSearching.set(false);self.products.set(products)
       })
     }
   });

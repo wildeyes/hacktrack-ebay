@@ -8,7 +8,7 @@
   <div class="outer">
     <!-- <div class="logo"></div>
     <h1 class="title">BuyGood</h1> -->
-    <img src="images/buygood.png" alt="" />
+    <img class="logo" src="images/buygood.png" alt="" />
     <!-- <div class="subtitle">Select a scientist to give them points</div> -->
     {{> buygood}}
     <!-- <footer class="footer"><p>BuyGood - 2016 - Hacktrack TLV
@@ -34,9 +34,13 @@
     {{/each}}
   </ol>
   {{else}}
-  <div class="subtitle">awaiting your search... :)</div>
+    {{#if isSearching}}
+      <img src="images/spinner.gif" alt="" />
+    {{else}}
+      <div class="subtitle">awaiting your search... :)</div>
+    {{/if}}
   {{/if}}
-</div>
+  </div>
 <!--   {{#if selectedName}}
     <div class="details">
       <div class="name">{{selectedName}}</div>
